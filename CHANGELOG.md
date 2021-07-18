@@ -1,3 +1,8 @@
+## 1.2.0
+
+- Adding retry system if requests fails
+- New `VigilLogger` to debug issues
+
 ## 1.1.1
 
 - Fixing `system_resources`

@@ -1,18 +1,20 @@
 import 'dart:io';
 
-import 'package:vigil_reporter/src/base.dart';
+import 'package:vigil_reporter/vigil_reporter.dart';
 
 void main() {
-  final reporter = VigilReporter(
-    url: 'https://status.pikomit.com',
-    token: '9HtpYiTj&q&X8DSRQzSXbAoYp@3SRczgsiaPLeek',
-    probeId: 'app',
-    nodeId: 'odin',
-    replicaId: 'test',
+  final vigilReporter = VigilReporter(
+    url: 'https://status.example.com',
+    token: 'YOUR_TOKEN_SECRET',
+    probeId: 'relay',
+    nodeId: 'socket-client',
+    replicaId: '192.168.1.10',
+    interval: 30,
+    logger: VigilLogger(),
   );
 
   ProcessSignal.sigint.watch().listen((event) async {
-    await reporter.end(flush: true);
+    await vigilReporter.end(flush: true);
     exit(0);
   });
 }

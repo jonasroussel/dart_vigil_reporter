@@ -1,6 +1,6 @@
 name: vigil_reporter
 description: Vigil Reporter for Dart. Used in pair with Vigil, the Microservices Status Page.
-version: 1.1.1
+version: 1.2.0
 repository: https://github.com/jonasroussel/vigil_reporter
 homepage: https://github.com/jonasroussel/vigil_reporter#readme
 
@@ -8,8 +8,8 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  system_resources: ^1.4.1
+  system_resources: ^1.5.0
   http: ^0.13.3
 
 dev_dependencies:
-  pedantic: ^1.9.0
+  pedantic: ^1.11.1

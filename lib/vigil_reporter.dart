@@ -1,3 +1,4 @@
 library vigil_reporter;
 
-export 'src/base.dart';
+export 'src/reporter.dart';
+export 'src/logger.dart';
