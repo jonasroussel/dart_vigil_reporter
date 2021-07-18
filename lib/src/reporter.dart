@@ -24,7 +24,7 @@ class VigilReporter {
 
   /// `page_url` from Vigil `config.cfg`
   String url;
-  
+
   /// `reporter_token` from Vigil `config.cfg`
   final String token;
 
@@ -46,7 +46,7 @@ class VigilReporter {
   Timer? _pollTicker;
 
   /// Stop polling requests
-  /// 
+  ///
   /// `flush` Whether to flush replica from Vigil upon teardown
   Future<void> end({bool flush = false}) async {
     _pollTicker?.cancel();
@@ -59,7 +59,8 @@ class VigilReporter {
   void _scheduleNextPoll(Duration duration, bool failed) {
     if (failed) {
       duration = Duration(milliseconds: duration.inMilliseconds ~/ 2);
-      logger?.warn('Last request failed, scheduled next request sooner in ${duration.inSeconds} secs');
+      logger?.warn(
+          'Last request failed, scheduled next request sooner in ${duration.inSeconds} secs');
     } else {
       logger?.info('Scheduled next request in ${duration.inSeconds} secs');
     }
@@ -67,7 +68,8 @@ class VigilReporter {
     _pollTicker ??= Timer(duration, () async {
       _pollTicker = null;
 
-      logger?.info('Executing next request now (after wait of ${duration.inSeconds} secs)');
+      logger?.info(
+          'Executing next request now (after wait of ${duration.inSeconds} secs)');
 
       await _dispatchPollRequest();
     });
