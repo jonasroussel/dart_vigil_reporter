@@ -1,3 +1,7 @@
+## 1.2.1
+
+- Some changes to the README.md
+
 ## 1.2.0
 
 - Adding retry system if requests fails

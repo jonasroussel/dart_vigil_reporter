@@ -1,6 +1,6 @@
 name: vigil_reporter
 description: Vigil Reporter for Dart. Used in pair with Vigil, the Microservices Status Page.
-version: 1.2.0
+version: 1.2.1
 repository: https://github.com/jonasroussel/vigil_reporter
 homepage: https://github.com/jonasroussel/vigil_reporter#readme
 

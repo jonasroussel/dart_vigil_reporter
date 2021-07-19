@@ -1,6 +1,9 @@
-# dart-vigil-reporter
+# Dart Vigil Reporter
 
 [![pub package](https://img.shields.io/pub/v/vigil_reporter.svg)](https://pub.dev/packages/vigil_reporter)
+[![likes](https://badges.bar/vigil_reporter/likes)](https://pub.dev/packages/vigil_reporter/score)
+[![popularity](https://badges.bar/vigil_reporter/popularity)](https://pub.dev/packages/vigil_reporter/score)
+[![pub points](https://badges.bar/vigil_reporter/pub%20points)](https://pub.dev/packages/vigil_reporter/score)
 
 **Vigil Reporter for Dart. Used in pair with Vigil, the Microservices Status Page.**
 
@@ -31,10 +34,10 @@ Include `vigil_reporter` in your `pubspec.yaml` dependencies.
 
 ```yaml
 dependencies:
-  vigil_reporter: ^1.2.0
+  vigil_reporter: ^1.2.1
 ```
 
-Alternatively, you can run `dart pub add vigil-reporter`.
+Alternatively, you can run `dart pub add vigil_reporter`.
 
 ## How to use?
 
@@ -52,21 +55,21 @@ final vigilReporter = VigilReporter(
   nodeId: 'socket-client',
   replicaId: '192.168.1.10',
   interval: 30,
-  logger: VigilLogger(), // defaults to null (no logs)
+  logger: VigilLogger(),
 );
 ```
 
 ### 2. Teardown reporter
 
-If you need to teardown an active reporter, you can use the `end(bool flush)` method to unbind it.
+If you need to teardown an active reporter, you can use the `end({bool flush = false})` method to unbind it.
 
 ```dart
 vigilReporter.end(flush: false)
-	.then(() {
-		// Handle end there
-	}).catchError(() {
-		// Handle error there
-	});
+  .then(() {
+    // Handle end there
+  }).catchError(() {
+    // Handle error there
+  });
 ```
 
 ## What is Vigil?
